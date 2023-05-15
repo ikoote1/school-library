@@ -21,18 +21,16 @@ class Person
     def age=(new_age)
         @age = new_age
     end
-
-    def od_age?
-        if(age > 18)
+    private
+    def of_age?
+        if(age >= 18)
             true
-        elsif
+        else
             false
         end
     end
-
+    public
     def can_use_services?
-        if(age>18 || parent_permission == true)
-            true
-        end
+        of_age? || parent_permission
     end
 end
