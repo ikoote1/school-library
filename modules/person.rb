@@ -23,26 +23,11 @@ class Person
     end
     private
     def of_age?
-        if(age >= 18)
-            true
-        else
-            false
-        end
+        age >= 18
     end
     public
     def can_use_services?
         of_age? || parent_permission
-    end
-end
-
-class Student < Person
-    def initialize
-        super(classroom)
-        @classroom = classroom
-    end
-
-    def play_hooky
-        "¯\(ツ)/¯"
     end
 end
 
