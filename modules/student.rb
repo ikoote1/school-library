@@ -1,4 +1,5 @@
 require "./person.rb"
+
 class Student < Person
     def initialize(classroom)
         super('Unknown',0)
