@@ -3,6 +3,7 @@ class Person
         @id = Random.rand(1..10000)
         @name = name
         @age = age
+        @parent_permission = parent_permission
     end
     def id
         @id
@@ -23,7 +24,7 @@ class Person
     end
     private
     def of_age?
-        age >= 18
+        @age >= 18
     end
     public
     def can_use_services?
