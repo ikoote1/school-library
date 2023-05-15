@@ -46,9 +46,3 @@ class Student < Person
     end
 end
 
-class Teahcer < Person
-    def initialize
-        super(specialization)
-        @specialization = specialization
-    end
-end
