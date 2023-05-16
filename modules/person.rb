@@ -1,4 +1,4 @@
-require './nameable'
+require_relative './nameable'
 
 class Person < Nameable
   def initialize(age, name = 'Unknown')
@@ -29,31 +29,7 @@ class Person < Nameable
   end
 end
 
-class BaseDecorator < Nameable
-  attr_accessor :nameable
 
-  def initialize(nameable)
-    super()
-    @nameable = nameable
-  end
-
-  def correct_name
-    @nameable.correct_name
-  end
-end
-
-class CapitalizeDecorator < BaseDecorator
-  def correct_name
-    @nameable.correct_name.capitalize
-  end
-end
-
-class TrimmerDecorator < BaseDecorator
-  def correct_name
-    trimmed_name = @nameable.correct_name[0..9]
-    trimmed_name.length < @nameable.correct_name.length ? trimmed_name : @nameable.correct_name
-  end
-end
 
 person = Person.new(22, 'maximilianus')
 puts person.correct_name
