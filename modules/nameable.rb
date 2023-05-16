@@ -21,3 +21,8 @@ class CapitalizeDecorator < BaseDecorator
 	@nameable.correct_name
   end
 end
+class TrimmerDecorator < BaseDecorator
+  def correct_name
+	@nameeable.correct_name
+  end
+end
