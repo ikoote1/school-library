@@ -1,7 +1,8 @@
-require "./nameable.rb"
+require './nameable'
 
- class Person < Nameable
+class Person < Nameable
   def initialize(age, name = 'Unknown')
+    super()
     @id = Random.rand(1..10_000)
     @name = name
     @age = age
@@ -32,19 +33,21 @@ class BaseDecorator < Nameable
   attr_accessor :nameable
 
   def initialize(nameable)
-	@nameable = nameable
+    super()
+    @nameable = nameable
   end
 
   def correct_name
-	@nameable.correct_name
+    @nameable.correct_name
   end
 end
 
 class CapitalizeDecorator < BaseDecorator
   def correct_name
-	@nameable.correct_name.capitalize
+    @nameable.correct_name.capitalize
   end
 end
+
 class TrimmerDecorator < BaseDecorator
   def correct_name
     trimmed_name = @nameable.correct_name[0..9]
@@ -52,10 +55,9 @@ class TrimmerDecorator < BaseDecorator
   end
 end
 
-
 person = Person.new(22, 'maximilianus')
-  person.correct_name
-  capitalizedPerson = CapitalizeDecorator.new(person)
-  capitalizedPerson.correct_name
-  capitalizedTrimmedPerson = TrimmerDecorator.new(capitalizedPerson)
-  capitalizedTrimmedPerson.correct_name
+puts person.correct_name
+capitalized_Person = CapitalizeDecorator.new(person)
+puts capitalized_Person.correct_name
+capitalized_Trimmed_Person = TrimmerDecorator.new(capitalized_Person)
+puts capitalized_Trimmed_Person.correct_name
