@@ -1,4 +1,3 @@
-# this code have a connects book and preson in a many to many relationship
 class Rental
   attr_accessor :date, :book, :person
 
