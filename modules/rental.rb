@@ -1,19 +1,20 @@
+# this code have a connects book and preson in a many to many relationship
 class Rental
-    attr_accessor :date, :book, :person
+  attr_accessor :date, :book, :person
 
-    def initialize(date)
-        @date = date
-        @book = book
-        @person = person
-    end
+  def initialize(date)
+    @date = date
+    @book = book
+    @person = person
+  end
 
-    def get_book(book)
-        @book = book
-        book.add_rental(self)
-    end
+  def get_book(book)
+    @book = book
+    book.add_rental(self)
+  end
 
-    def person_rent(person)
-        @person = person
-        person.rent_book(self)
-    end
+  def person_rent(person)
+    @person = person
+    person.rent_book(self)
+  end
 end
