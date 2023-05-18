@@ -1,7 +1,7 @@
 require_relative './nameable'
 
 class Person < Nameable
-  def initialize(age, name = 'Unknown')
+  def initialize(age, name = 'Unknown',parent_permission)
     super()
     @id = Random.rand(1..10_000)
     @name = name
@@ -10,15 +10,11 @@ class Person < Nameable
     @rentals = []
   end
 
-  attr_accessor :name, :age, :rentals
+  attr_accessor :name, :age, :parent_permission :rentals
   attr_reader :id
 
   def correct_name
     name
-  end
-
-  def rent_book(rental)
-    @rentals << rental
   end
 
   private
