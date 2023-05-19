@@ -1,10 +1,10 @@
 # require_relative 'book'
 # require_relative 'person'
-# require_relative 'rental'
+require_relative 'rental'
 # require 'date'
 
  def main
-    library = library.new
+    library = Rental.new
 
     loop do
         puts "\nWelcome to school Library App!"
