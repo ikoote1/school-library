@@ -5,11 +5,11 @@ require_relative 'student'
 require_relative 'classroom'
 require_relative 'person'
 
-class App
+# class  App
   attr_accessor :books, :rentals, :people
 
   def initialize
-    @books = []
+    # @books = []
     @rentals = []
     @people = []
   end
@@ -46,7 +46,6 @@ class App
       end
     end
   end
-
   def list_people
     @people.each do |person|
       if person.is_a?(Student)
