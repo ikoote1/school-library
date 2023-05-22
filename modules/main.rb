@@ -11,6 +11,7 @@ class Main
     puts '6 - List all rentals for a given person id'
     puts '7 - Exit!'
   end
+
   def start
     new_app = App.new
     puts 'Welcome to School Library App!'
@@ -18,9 +19,11 @@ class Main
       choose_option
       option = gets.chomp
       break if option == '7'
+
       new_app.selected_option(option)
     end
   end
+
   def create_person(new_app)
     puts 'Do you want to create a student(1) or a teacher(2)?'
     choice = gets.chomp
@@ -32,6 +35,7 @@ class Main
       puts 'Your input is wrong!'
     end
   end
+
   def create_student(new_app)
     puts 'Age:'
     age = gets.chomp.to_i
@@ -43,6 +47,7 @@ class Main
     new_app.add_person(student)
     puts 'You added the student successfully'
   end
+
   def create_teacher(new_app)
     puts 'Age:'
     age = gets.chomp.to_i
@@ -55,6 +60,7 @@ class Main
     puts 'You added the teacher successfully'
   end
 end
+
 def main
   app = Main.new
   app.start
