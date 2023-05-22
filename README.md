@@ -121,13 +121,19 @@ You can deploy this project using:
 
 <!-- AUTHORS -->
 
-## 👥 Author <a name="author"></a>
+## 👥 Authors <a name="author"></a>
 
 👤 **IKOOTE RASULI**
 
 - GitHub: [@githubhandle](https://github.com/ikoote1/)
 - Twitter: [@twitterhandle](https://twitter.com/ikootepreim1)
 - LinkedIn: [LinkedIn](https://linkedin.com/in/ikooterasuli/)
+
+👤 **Lornakaboro**
+
+- GitHub: [@githubhandle](https://github.com/Lornakaboro)
+- Twitter: [@twitterhandle](https://twitter.com/KaboroLorna)
+- Linkedin [@linkedinprofile](https://www.linkedin.com/in/lorna-kaboro-23620b242/)
 
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
