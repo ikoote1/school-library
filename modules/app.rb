@@ -1,4 +1,3 @@
-require 'pry'
 require_relative 'teacher'
 require_relative 'book'
 require_relative 'rental'
@@ -6,7 +5,7 @@ require_relative 'student'
 require_relative 'classroom'
 require_relative 'person'
 
-class  App
+class App
   attr_accessor :books, :rentals, :people
 
   def initialize
@@ -47,6 +46,7 @@ class  App
       end
     end
   end
+
   def list_people
     @people.each do |person|
       if person.is_a?(Student)
@@ -72,7 +72,7 @@ class  App
       puts 'Your input is wrong!'
     end
   end
-    binding.pry
+
   def create_student
     puts 'Age:'
     age = gets.chomp
