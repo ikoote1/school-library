@@ -1,3 +1,4 @@
+require 'pry'
 require_relative 'teacher'
 require_relative 'book'
 require_relative 'rental'
@@ -5,11 +6,11 @@ require_relative 'student'
 require_relative 'classroom'
 require_relative 'person'
 
-# class  App
+class  App
   attr_accessor :books, :rentals, :people
 
   def initialize
-    # @books = []
+    @books = []
     @rentals = []
     @people = []
   end
@@ -71,7 +72,7 @@ require_relative 'person'
       puts 'Your input is wrong!'
     end
   end
-
+    binding.pry
   def create_student
     puts 'Age:'
     age = gets.chomp
