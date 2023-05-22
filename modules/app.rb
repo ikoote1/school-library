@@ -16,7 +16,6 @@ class App
 
   def selected_option(option)
     case option
-
     when '1'
       list_books
     when '2'
@@ -30,7 +29,7 @@ class App
     when '6'
       list_rentals
     else
-      'Please select valid option from the list!'
+      puts 'Please select a valid option from the list!'
     end
   end
 
@@ -62,11 +61,11 @@ class App
 
   def create_person
     puts 'Do you want to create a student(1) or a teacher(2)?'
-    choise = gets.chomp
+    choice = gets.chomp
 
-    if choise == '1'
+    if choice == '1'
       create_student
-    elsif choise == '2'
+    elsif choice == '2'
       create_teacher
     else
       puts 'Your input is wrong!'
@@ -82,7 +81,7 @@ class App
     parent_permission = gets.chomp.upcase == 'Y'
     student = Student.new(age, name, parent_permission)
     @people.push(student)
-    puts 'You added student successfully'
+    puts 'You added the student successfully'
   end
 
   def create_teacher
@@ -94,7 +93,11 @@ class App
     specialization = gets.chomp
     teacher = Teacher.new(age, name, specialization)
     @people.push(teacher)
-    puts 'You added teacher successfully'
+    puts 'You added the teacher successfully'
+  end
+
+  def add_person(person)
+    @people.push(person)
   end
 
   def create_book
@@ -105,30 +108,6 @@ class App
     book = Book.new(title, author)
     @books.push(book)
     puts 'Book created successfully'
-  end
-
-  def books_with_index
-    @books.each_with_index do |book, index|
-      text = "#{index}: "
-      book.instance_variables.each do |var|
-        val = book.instance_variable_get(var)
-        var = var.to_s.delete('@')
-        text += "#{var}:#{val} " unless var.include?('rentals') || var.include?('classroom')
-      end
-      puts text
-    end
-  end
-
-  def people_with_index
-    @people.each_with_index do |person, index|
-      text = "#{index}: "
-      person.instance_variables.each do |var|
-        val = person.instance_variable_get(var)
-        var = var.to_s.delete('@')
-        text += "#{var}:#{val} " unless var.include?('rentals') || var.include?('classroom')
-      end
-      puts text
-    end
   end
 
   def create_rental
@@ -161,6 +140,30 @@ class App
       title = book.instance_variable_get(:@title)
       author = book.instance_variable_get(:@author)
       puts "Date: #{rental.date} Book: #{title} by Author: #{author} "
+    end
+  end
+
+  def books_with_index
+    @books.each_with_index do |book, index|
+      text = "#{index}: "
+      book.instance_variables.each do |var|
+        val = book.instance_variable_get(var)
+        var = var.to_s.delete('@')
+        text += "#{var}:#{val} " unless var.include?('rentals') || var.include?('classroom')
+      end
+      puts text
+    end
+  end
+
+  def people_with_index
+    @people.each_with_index do |person, index|
+      text = "#{index}: "
+      person.instance_variables.each do |var|
+        val = person.instance_variable_get(var)
+        var = var.to_s.delete('@')
+        text += "#{var}:#{val} " unless var.include?('rentals') || var.include?('classroom')
+      end
+      puts text
     end
   end
 end
