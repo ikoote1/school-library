@@ -49,7 +49,8 @@ class App
   def list_people
     @people.each do |person|
       if person.is_a?(Student)
-        puts "[Student] Name: #{person.name}, ID: #{person.object_id}, Age: #{person.age}"
+        puts "[Student] Name: #{person.name}, ID: #{person.object_id},
+         Parent Permission: #{person.parent_permission}, Age: #{person.age}"
       elsif person.is_a?(Teacher)
         puts "[Teacher] Name: #{person.name}, ID: #{person.object_id}, Age: #{person.age}"
       else
@@ -79,7 +80,7 @@ class App
     name = gets.chomp
     puts 'Has parent permission? [Y/N]'
     parent_permission = gets.chomp.upcase == 'Y'
-    student = Student.new(age, name, parent_permission)
+    student = Student.new(age, parent_permission, name)
     @people.push(student)
     puts 'You added the student successfully'
   end
