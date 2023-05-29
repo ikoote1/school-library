@@ -9,9 +9,8 @@ This is an application that have book records, adds the names of new teachers an
 
 - [school-library](#school-library)
 - [📗 Table of Contents](#-table-of-contents)
-- [📖 \[your\_project\_name\] ](#-school-library-)
-  - [🛠 Built With PortsgreSQL](#-built-with-ruby)
-    - [Tech Stack Github](#tech-stack-github)
+- [📖 \[school-library\] ](#-school-library-)
+  - [🛠 Built With Ruby, WSL](#-built-with-ruby-wsl)
     - [Key Features ](#key-features-)
   - [🚀 Live Demo ](#-live-demo-)
   - [💻 Getting Started ](#-getting-started-)
@@ -21,7 +20,7 @@ This is an application that have book records, adds the names of new teachers an
     - [Usage](#usage)
     - [Run tests](#run-tests)
     - [Deployment](#deployment)
-  - [👥 Author ](#-author-)
+  - [👥 Authors ](#-authors-)
   - [🔭 Future Features ](#-future-features-)
   - [🤝 Contributing ](#-contributing-)
   - [⭐️ Show your support ](#️-show-your-support-)
@@ -135,6 +134,14 @@ You can deploy this project using:
 - Twitter: [@twitterhandle](https://twitter.com/KaboroLorna)
 - Linkedin [@linkedinprofile](https://www.linkedin.com/in/lorna-kaboro-23620b242/)
 
+👤 **Muhammad Usman Aslam**
+
+- GitHub: [@githubhandle](https://github.com/muhammadUsmanaslam)
+- Twitter: [@twitterhandle](https://twitter.com/M_Usman_Aslam)
+- Linkedin [@linkedinprofile](https://www.linkedin.com/in/muhammad-usman-aslam/)
+
+
+
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -144,7 +151,7 @@ You can deploy this project using:
 
 - [ ] **[Use classes]**
 - [ ] **[Hashes]**
-- [ ] **[]**
+- [ ] **[Use of YAGNI, KISS, and DRY rules]**
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
