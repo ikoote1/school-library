@@ -1,3 +1,4 @@
+require "json"
 require_relative 'teacher'
 require_relative 'book'
 require_relative 'rental'
@@ -13,6 +14,13 @@ class App
     @rentals = []
     @people = []
   end
+
+  def save_data
+    save_books
+    save_people
+    save_rentals
+  end
+
 
   def selected_option(option)
     case option
@@ -109,6 +117,12 @@ class App
     book = Book.new(title, author)
     @books.push(book)
     puts 'Book created successfully'
+  end
+
+  def save_books
+    File.open('books.json', 'w') do |file|
+      file.write(JSON.generate(@books))
+    end
   end
 
   def create_rental
