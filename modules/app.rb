@@ -109,6 +109,13 @@ class App
     @people.push(person)
   end
 
+  def save_people
+    File.open('people.json', 'w') do |file|
+      file.write(JSON.generate(@people))
+    end
+  end
+
+
   def create_book
     puts 'Title:'
     title = gets.chomp
