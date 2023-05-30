@@ -1,4 +1,5 @@
 require 'json'
+require_relative 'books.json'
 require_relative 'app'
 class Main
 
