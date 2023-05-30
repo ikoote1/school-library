@@ -1,5 +1,61 @@
+require 'json'
 require_relative 'app'
 class Main
+
+  def load_data
+    load_books
+    load_people
+    load_rentals
+  end
+
+  def load_books
+    if File.exist?('books.json')
+      books_data = JSON.parse(File.read('books.json'))
+      books_data.each do |book_data|
+        book = Book.new(book_data['title'], book_data['author'])
+        @app.books.push(book)
+      end
+    end
+  end
+
+  def load_people
+    if File.exist?('people.json')
+      people_data = JSON.parse(File.read('people.json'))
+      people_data.each do |person_data|
+        if person_data['type'] == 'student'
+          student = Student.new(person_data['age'], person_data['parent_permission'], person_data['name'])
+          @app.people.push(student)
+        elsif person_data['type'] == 'teacher'
+          teacher = Teacher.new(person_data['age'], person_data['name'], person_data['specialization'])
+          @app.people.push(teacher)
+        else
+          person = Person.new(person_data['name'])
+          @app.people.push(person)
+        end
+      end
+    end
+  end
+
+  def load_rentals
+    if File.exist?('rentals.json')
+      rentals_data = JSON.parse(File.read('rentals.json'))
+      rentals_data.each do |rental_data|
+        book = find_book_by_id(rental_data['book_id'])
+        person = find_person_by_id(rental_data['person_id'])
+        rental = Rental.new(rental_data['date'], book, person)
+        @app.rentals.push(rental)
+      end
+    end
+  end
+
+  def find_book_by_id(id)
+    @app.books.find { |book| book.object_id == id }
+  end
+
+  def find_person_by_id(id)
+    @app.people.find { |person| person.object_id == id }
+  end
+
   def choose_option
     puts ''
     puts 'Please choose an option by entering a number:'
