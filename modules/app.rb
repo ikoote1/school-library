@@ -148,6 +148,12 @@ class App
     puts 'Rental created successfully'
   end
 
+  def save_rentals
+    File.open('rentals.json', 'w') do |file|
+      file.write(JSON.generate(@rentals))
+    end
+  end
+
   def list_rentals
     print 'To see person rentals enter the person ID: '
     id = gets.chomp.to_i
