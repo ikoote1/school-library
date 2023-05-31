@@ -1,5 +1,5 @@
 require 'json'
-require_relative 'books.json'
+# require_relative 'books.json'
 require_relative 'app'
 class Main
 
@@ -11,11 +11,18 @@ class Main
 
   def load_books
     if File.exist?('books.json')
-      books_data = JSON.parse(File.read('books.json'))
-      books_data.each do |book_data|
-        book = Book.new(book_data['title'], book_data['author'])
-        @app.books.push(book)
+      books_data = File.read('books.json')
+      books = JSON.parse(books_data).map do |book_data|
+        book = (Book.new(book_data["title"], book_data['author']))
       end
+      # puts books
+      # @app.books.push(book)
+      # 
+      # books_data.each do |book_data|
+      #   puts book_data.name
+      #   book = Book.new(book_data['title'], book_data['author'])
+      #   @app.books.push(book)
+      # end
     end
   end
 
@@ -70,12 +77,16 @@ class Main
   end
 
   def start
+    # load_data
     new_app = App.new
     puts 'Welcome to School Library App!'
     loop do
       choose_option
       option = gets.chomp
-      break if option == '7'
+      if option == '7'
+        new_app.save_data
+        break
+      end
 
       new_app.selected_option(option)
     end

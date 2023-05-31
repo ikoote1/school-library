@@ -112,10 +112,9 @@ class App
 
   def save_people
     File.open('people.json', 'w') do |file|
-      file.write(JSON.generate(@people))
+      file.write(@people.to_json)
     end
   end
-
 
   def create_book
     puts 'Title:'
@@ -123,13 +122,14 @@ class App
     puts 'Author:'
     author = gets.chomp
     book = Book.new(title, author)
+    # print book.title
     @books.push(book)
     puts 'Book created successfully'
   end
 
   def save_books
     File.open('books.json', 'w') do |file|
-      file.write(JSON.generate(@books))
+      file.write(@books.to_json)
     end
   end
 
@@ -151,7 +151,7 @@ class App
 
   def save_rentals
     File.open('rentals.json', 'w') do |file|
-      file.write(JSON.generate(@rentals))
+      file.write(@rentals.to_json)
     end
   end
 

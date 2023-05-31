@@ -1,13 +1,1 @@
-[
-    {
-      "date": "2023-05-30",
-      "book_id": 1,
-      "person_id": 2
-    },
-    {
-      "date": "2023-05-29",
-      "book_id": 2,
-      "person_id": 3
-    }
-  ]
-  
+[{"date":"31","book":{"title":"T1","author":"A1","rentals":[]},"person":{"id":7578,"name":"Usman","age":"25","parent_permission":true,"rentals":[],"classroom":"Unknown"}},{"date":"31","book":{"title":"T1","author":"A1","rentals":[]},"person":{"id":7578,"name":"Usman","age":"25","parent_permission":true,"rentals":[],"classroom":"Unknown"}}]
