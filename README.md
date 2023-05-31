@@ -60,6 +60,9 @@ This is an application that have book records, adds the names of new teachers an
 
 - **[module]** This contains all ruby files.
 - **[Class]** This contains all the methods.
+- **[Use classes]**
+- **[Hashes]**
+- **[Use of YAGNI, KISS, and DRY rules]**
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -149,9 +152,8 @@ You can deploy this project using:
 
 ## 🔭 Future Features <a name="future-features"></a>
 
-- [ ] **[Use classes]**
-- [ ] **[Hashes]**
-- [ ] **[Use of YAGNI, KISS, and DRY rules]**
+- [ ] **[On exit from application add books, people, and rentals data into JSON files]**
+- [ ] **[On startup of your app load all data from files.]**
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
