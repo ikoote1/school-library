@@ -1,4 +1,3 @@
-# ikoote
 require_relative './person'
 
 class Teacher < Person
@@ -6,6 +5,10 @@ class Teacher < Person
     super(age, true, name)
     @specialization = specialization
   end
+
+
+
+
 
   def to_json(*args)
     { id:, name:, age:, parent_permission:, rentals: [],
