@@ -1,5 +1,4 @@
 require "json"
-# require 'books.json'
 require_relative 'teacher'
 require_relative 'book'
 require_relative 'rental'
@@ -58,10 +57,10 @@ class App
   def list_people
     @people.each do |person|
       if person.is_a?(Student)
-        puts "[Student] Name: #{person.name}, ID: #{person.object_id},
+        puts "[Student] Name: #{person.name}, ID: #{person.id},
          Parent Permission: #{person.parent_permission}, Age: #{person.age}"
       elsif person.is_a?(Teacher)
-        puts "[Teacher] Name: #{person.name}, ID: #{person.object_id}, Age: #{person.age}"
+        puts "[Teacher] Name: #{person.name}, ID: #{person.id}, Age: #{person.age}"
       else
         puts "Name: #{person.name}"
       end
@@ -122,7 +121,6 @@ class App
     puts 'Author:'
     author = gets.chomp
     book = Book.new(title, author)
-    # print book.title
     @books.push(book)
     puts 'Book created successfully'
   end
@@ -156,14 +154,14 @@ class App
   end
 
   def list_rentals
-    print 'To see person rentals enter the person ID: '
-    id = gets.chomp.to_i
+    print 'To see person rentals enter the person Name: '
+    name = gets.chomp.to_s
     puts 'Rented Books:'
     @rentals.each do |rental|
       person = rental.instance_variable_get(:@person)
-      person_id = person.instance_variable_get(:@id)
+      person_name = person.instance_variable_get(:@name)
 
-      next unless person_id == id
+      next unless person_name == name
 
       book = rental.instance_variable_get(:@book)
       title = book.instance_variable_get(:@title)

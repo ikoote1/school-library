@@ -11,7 +11,7 @@ class Main
   def load_data
     load_books
     load_people
-    # load_rentals
+    load_rentals
   end
   
 
@@ -46,26 +46,26 @@ class Main
   end
   
 
-  # def load_rentals
-  #   if File.exist?('rentals.json')
-  #     rentals_data = JSON.parse(File.read('rentals.json'))
-  #     rentals_data.each do |rental_data|
-  #       book = find_book_by_id(rental_data['book']['title'], rental_data['book']['author'])
-  #       person = find_person_by_id(rental_data['person']['id'])
-  #       rental = Rental.new(rental_data['date'], book, person)
-  #       @app.rentals.push(rental)
-  #     end
-  #   end
-  # end
+  def load_rentals
+    if File.exist?('rentals.json')
+      rentals_data = JSON.parse(File.read('rentals.json'))
+      rentals_data.each do |rental_data|
+        book = find_book_by_id(rental_data['book']['title'], rental_data['book']['author'])
+        person = find_person_by_name(rental_data['person']['name'])
+        rental = Rental.new(rental_data['date'], book, person)
+        @app.rentals.push(rental)
+      end
+    end
+  end
+
   
+  def find_book_by_id(title, author)
+    @app.books.find { |book| book.title == title && book.author == author }
+  end
   
-  # def find_book_by_id(title, author)
-  #   @app.books.find { |book| book.title == title && book.author == author }
-  # end
-  
-  # def find_person_by_id(id)
-  #   @app.people.find { |person| person.id == id }
-  # end
+  def find_person_by_name(name)
+    @app.people.find { |person| person.name == name }
+  end
   
   
 
