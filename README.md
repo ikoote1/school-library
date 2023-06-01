@@ -12,7 +12,6 @@ This is an application that have book records, adds the names of new teachers an
 - [📖 \[school-library\] ](#-school-library-)
   - [🛠 Built With Ruby, WSL](#-built-with-ruby-wsl)
     - [Key Features ](#key-features-)
-  - [🚀 Live Demo ](#-live-demo-)
   - [💻 Getting Started ](#-getting-started-)
     - [Prerequisites](#prerequisites)
     - [Setup](#setup)
@@ -63,14 +62,6 @@ This is an application that have book records, adds the names of new teachers an
 - **[Use classes]**
 - **[Hashes]**
 - **[Use of YAGNI, KISS, and DRY rules]**
-
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
-
-<!-- LIVE DEMO -->
-
-## 🚀 Live Demo <a></a>
-
-- Project will not be deployed.
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
