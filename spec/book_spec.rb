@@ -8,7 +8,7 @@ describe Book do
 
   describe 'to_json' do
     it 'returns the book details as JSON' do
-      expected_json = { title:, author:, rentals: [] }.to_json
+      expected_json = { title: title, author: author, rentals: [] }.to_json
       expect(book.to_json).to eq(expected_json)
     end
   end

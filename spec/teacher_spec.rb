@@ -18,8 +18,8 @@ describe Teacher do
 
   describe 'to_json' do
     it 'returns the teacher details as JSON' do
-      expected_json = { id: teacher.id, name:, age:, parent_permission: true,
-                        rentals: [], specialization: }.to_json
+      expected_json = { id: teacher.id, name: name, age: age, parent_permission: true,
+                        rentals: [], specialization: specialization }.to_json
       expect(teacher.to_json).to eq(expected_json)
     end
   end
