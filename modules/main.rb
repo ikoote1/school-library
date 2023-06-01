@@ -1,5 +1,65 @@
+require 'json'
 require_relative 'app'
+
 class Main
+  def initialize
+    @app = App.new
+  end
+
+  def load_data
+    load_books
+    load_people
+    load_rentals
+  end
+
+  def load_books
+    return unless File.exist?('books.json')
+
+    books_data = JSON.parse(File.read('books.json'))
+    books_data.each do |book_data|
+      book = Book.new(book_data['title'], book_data['author'])
+      @app.books.push(book)
+    end
+  end
+
+  def load_people
+    return unless File.exist?('people.json')
+
+    people_data = JSON.parse(File.read('people.json'))
+    people_data.each do |person_data|
+      if !person_data['specialization']
+        student = Student.new(person_data['age'], person_data['parent_permission'], person_data['name'])
+        @app.people.push(student)
+      elsif person_data['specialization']
+        teacher = Teacher.new(person_data['age'], person_data['name'], person_data['specialization'])
+        @app.people.push(teacher)
+      else
+        person = Person.new(person_data['name'])
+        @app.people.push(person)
+      end
+    end
+  end
+
+  def load_rentals
+    return unless File.exist?('rentals.json')
+
+    rentals_data = JSON.parse(File.read('rentals.json'))
+    rentals_data.each do |rental_data|
+      book = find_book_by_id(rental_data['book']['title'], rental_data['book']['author'])
+      person = find_person_by_name(rental_data['person']['name'])
+      rental = Rental.new(rental_data['date'], book, person)
+      @app.rentals.push(rental)
+    end
+  end
+
+  def find_book_by_id(title, author)
+    @app.books.find { |book| book.title == title && book.author == author }
+  end
+
+  def find_person_by_name(name)
+    @app.people.find { |person| person.name == name }
+  end
+
   def choose_option
     puts ''
     puts 'Please choose an option by entering a number:'
@@ -13,14 +73,17 @@ class Main
   end
 
   def start
-    new_app = App.new
+    load_data
     puts 'Welcome to School Library App!'
     loop do
       choose_option
       option = gets.chomp
-      break if option == '7'
+      if option == '7'
+        @app.save_data
+        break
+      end
 
-      new_app.selected_option(option)
+      @app.selected_option(option)
     end
   end
 
@@ -65,4 +128,5 @@ def main
   app = Main.new
   app.start
 end
+
 main
