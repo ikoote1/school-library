@@ -8,7 +8,7 @@ describe Student do
   let(:name) { 'Usman' }
   let(:classroom) { 'Unkown' }
   let(:id) { 150 }
-  let(:student) { Student.new(age, parent_permission, name, classroom: classroom) }
+  let(:student) { Student.new(age, parent_permission, name, classroom:) }
 
   describe '#to_json' do
     it 'returns the student details as JSON' do

@@ -7,7 +7,7 @@ class Teacher < Person
   end
 
   def to_json(*args)
-    { id: id, name: name, age: age, parent_permission: parent_permission, rentals: [],
+    { id:, name:, age:, parent_permission:, rentals: [],
       specialization: @specialization }.to_json(*args)
   end
 

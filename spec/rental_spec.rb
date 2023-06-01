@@ -22,7 +22,7 @@ describe Rental do
 
   describe '#to_json' do
     it 'returns the rental details as JSON' do
-      expected_json = { date: date, book: book, person: person }.to_json
+      expected_json = { date:, book:, person: }.to_json
       expect(rental.to_json).to eq(expected_json)
     end
   end
