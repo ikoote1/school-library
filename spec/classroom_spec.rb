@@ -3,7 +3,7 @@ require_relative '../modules/classroom'
 describe Classroom do
   let(:label) { 'Mathematics' }
   let(:classroom) { Classroom.new(label) }
-  
+
   describe 'add_student' do
     let(:student) { double('Student') }
 
@@ -15,6 +15,5 @@ describe Classroom do
 
       expect(classroom.students).to contain_exactly(student)
     end
-
   end
 end

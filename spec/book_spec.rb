@@ -2,9 +2,9 @@ require_relative '../modules/book'
 require 'json'
 
 describe Book do
-    let(:title) { 'The Gat' }
-    let(:author) { 'F. Fitzgerald' }
-    let(:book) { Book.new(title, author) }
+  let(:title) { 'The Gat' }
+  let(:author) { 'F. Fitzgerald' }
+  let(:book) { Book.new(title, author) }
 
   describe 'to_json' do
     it 'returns the book details as JSON' do
@@ -14,14 +14,13 @@ describe Book do
   end
 
   describe 'initialize' do
-  it 'sets the title and author' do
-    expect(book.title).to eq(title)
-    expect(book.author).to eq(author)
-  end
+    it 'sets the title and author' do
+      expect(book.title).to eq(title)
+      expect(book.author).to eq(author)
+    end
 
-  it 'initializes an empty rentals array' do
-    expect(book.rentals).to eq([])
+    it 'initializes an empty rentals array' do
+      expect(book.rentals).to eq([])
+    end
   end
-end
-
 end

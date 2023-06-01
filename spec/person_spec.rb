@@ -4,10 +4,10 @@ require_relative '../modules/rental'
 require 'json'
 
 describe Person do
-    let(:age) { 25 }
-    let(:parent_permission) { 'Y' }
-    let(:name) { 'Usman' }
-    let(:person) { Person.new(age, parent_permission, name) }
+  let(:age) { 25 }
+  let(:parent_permission) { 'Y' }
+  let(:name) { 'Usman' }
+  let(:person) { Person.new(age, parent_permission, name) }
 
   describe 'correct_name' do
     it 'returns the name' do
@@ -20,5 +20,4 @@ describe Person do
       expect(person.can_use_services?).to equal(true)
     end
   end
-
 end
