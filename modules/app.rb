@@ -1,4 +1,4 @@
-require "json"
+require 'json'
 require_relative 'teacher'
 require_relative 'book'
 require_relative 'rental'
@@ -20,7 +20,6 @@ class App
     save_people
     save_rentals
   end
-
 
   def selected_option(option)
     case option
@@ -110,9 +109,7 @@ class App
   end
 
   def save_people
-    File.open('people.json', 'w') do |file|
-      file.write(@people.to_json)
-    end
+    File.write('people.json', @people.to_json)
   end
 
   def create_book
@@ -126,9 +123,7 @@ class App
   end
 
   def save_books
-    File.open('books.json', 'w') do |file|
-      file.write(@books.to_json)
-    end
+    File.write('books.json', @books.to_json)
   end
 
   def create_rental
@@ -148,9 +143,7 @@ class App
   end
 
   def save_rentals
-    File.open('rentals.json', 'w') do |file|
-      file.write(@rentals.to_json)
-    end
+    File.write('rentals.json', @rentals.to_json)
   end
 
   def list_rentals
