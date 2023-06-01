@@ -1,4 +1,5 @@
 require_relative './nameable'
+require_relative './book'
 
 class Person < Nameable
   def initialize(age, parent_permission, name = 'Unknown')
@@ -33,3 +34,7 @@ class Person < Nameable
     of_age? || parent_permission
   end
 end
+
+# usman = Person.new(25, true, name: 'Usman')
+# puts usman.name
+# puts usman.rent_book(Book.new("Quran", "Allah"), "01/06/2023")
