@@ -1,4 +1,4 @@
-require './person'
+require_relative './person'
 
 class Student < Person
   attr_accessor :classroom
@@ -19,6 +19,6 @@ class Student < Person
 
   def join_classroom
     @classroom = classroom
-    classroom.student.push(self) unless classroom.students.include?(self)
+    classroom.student.push(self) unless classroom.student.include?(self)
   end
 end
